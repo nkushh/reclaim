@@ -25,7 +25,7 @@ SECRET_KEY = 'bmka!)d!+j6-s-fd7$2^p_#x0%xudocgk!soeyr^#5)2)k0sfe'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'mugdev.pythonanywhere.com']
 
 
 # Application definition
