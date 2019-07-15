@@ -1,0 +1,81 @@
+/* Global */
+.section-heading{
+	font-weight: bolder;
+}
+
+.slim-heading{
+	font-weight: lighter;
+}
+
+.section-heading:after{
+	content: "";
+	display: block;
+	height: 2px;
+	width: 5%;
+	background: #000;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+
+.form-btns{
+	text-align: center;
+}
+
+.form-btns .btn{
+	width: 45%;
+}
+
+/* Hero section */
+.hero-section{
+	height: 80vh;
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/hero-img1.jpg') center;
+	color: #fff;
+}
+
+.hero-section .btn-secondary{
+	background: transparent;
+	color: #fff;
+	border: 1px solid #eee;
+}
+
+.hero-section .btn-secondary:hover{
+	background: #007bff;
+	color: #fff;
+	border: 1px solid #eee;
+}
+.hero-section .btn-primary:hover{
+	background: transparent;
+	color: #fff;
+	border: 1px solid #eee;
+}
+
+/* About us section */
+.about-us{
+	padding-top: 5%;
+	padding-bottom: 5%;
+	overflow: hidden;
+}
+
+.about-text p{
+	line-height: 2.0;
+}
+
+/* Testimonials section */
+.testimonials .section-heading{
+	margin-bottom: 3%;
+}
+
+/* Claim form section */
+.claim-form{
+	border: 1px solid #444;
+	padding: 20px;
+	border-radius: 5px;
+	margin-top: 3%;
+}
+
+.claimform{
+	padding-top: 5%;
+	padding-bottom: 5%;
+	overflow: hidden;
+}

@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% block title %}Submit Claim{% endblock %}
+
+{% block content %}
+<section id="claimform" class="claimform">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="claim-form">
+                    <div class="form-group">
+                         <label for="customer-name">Customer/Proposer Name</label>
+                         <input type="text" name="proposer_name" class="form-control" placeholder="E.g. John Doe">
+                    </div>
+                    <div class="form-group">
+                         <label for="customer-name">ID/Passport No</label>
+                         <input type="text" name="proposer_name" class="form-control" placeholder="E.g. 28801345">
+                    </div>
+                    <div class="form-group">
+                         <label for="customer-name">PIN No</label>
+                         <input type="text" name="proposer_name" class="form-control" placeholder="E.g. A003456754">
+                    </div>
+                </div>
+            </div>
+            <!-- End col -->
+            <div class="col-md-6">
+                <div class="claim-form">
+                    <div class="form-group">
+                         <label for="customer-name">Email</label>
+                         <input type="email" name="proposer_email" class="form-control" placeholder="E.g. user@email.com">
+                    </div>
+                    <div class="form-group">
+                         <label for="customer-name">Mobile No</label>
+                         <input type="text" name="proposer_name" class="form-control" placeholder="E.g. +25471234567890">
+                    </div>
+                    <div class="form-group">
+                         <label for="customer-name">Customer/Proposer Name</label>
+                         <input type="text" name="proposer_name" class="form-control" placeholder="E.g. John Doe">
+                    </div>
+                </div>
+            </div>
+            <!-- End col -->
+      </div>
+      <!-- End row -->
+
+      <!-- Vehicle details -->
+      <div class="row">
+          <div class="col-md-4">
+              <div class="claim-form">
+                  <div class="form-group">
+                      <p>Vehicle Type</p>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio"> Motorcycle PSV
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio"> Tuk Tuk
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio"> Private Hire
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio"> Taxi
+                      </label>
+                   </div>
+                   <div class="form-group">
+                       <label for="">Make</label>
+                       <input type="text" name="" class="form-control" placeholder="E.g. Suzuki, Honda">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Body type</label>
+                        <input type="text" name="" class="form-control" placeholder="E.g. SUV, Saloon">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Year of make</label>
+                        <input type="text" name="" class="form-control" placeholder="E.g. 2000, 2018">
+                    </div>
+              </div>
+            </div>
+            <!-- Col end -->
+            <div class="col-md-4">
+                <div class="claim-form">
+                    <div class="form-group">
+                      <label for="">Color</label>
+                      <input type="text" class="form-control" name="optradio" placeholder="E.g. Red, Blue">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Seating Capacity</label>
+                      <input type="text" name="" class="form-control" placeholder="E.g. 2, 5, 7, 10">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Chasis No</label>
+                      <input type="text" name="" class="form-control" placeholder="Chasis Number">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Engine No</label>
+                      <input type="text" name="" class="form-control" placeholder="Engine Number">
+                    </div>
+                </div>
+            </div>
+            <!-- Col end -->
+            <div class="col-md-4">
+                <div class="claim-form">
+                    <div class="form-group">
+                      <label for="">Cubic capacity</label>
+                      <input type="text" class="form-control" name="optradio" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Scope of cover</label>
+                      <select class="form-control" name="" id="scope-of-cover" onchange="return scopeOfCover();">
+                        <option disabled selected value="">--Select insurance scope--</option>
+                        <option value="Comprehensive">Comprehensive</option>
+                        <option value="TPF&T">TPF&T</option>
+                        <option value="TPO">TPO</option>
+                      </select>
+                    </div>
+                    <div class="form-group" id="vehicle-value" style="display: none;">
+                      <label for="">Vehicle value</label>
+                      <input type="text" name="" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group" id="windscreen-value" style="display: none;">
+                      <label for="">Windscreen value</label>
+                      <input type="text" name="" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group" id="sound-value" style="display: none;">
+                      <label for="">Sound value</label>
+                      <input type="text" name="" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Use of motor vehicle</label>
+                      <input type="text" name="" class="form-control" placeholder="What is the vehicle used for?">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Motor vehicle garage</label>
+                      <input type="text" name="" class="form-control" placeholder="Which garage is the vehicle under?">
+                    </div>
+                </div>
+            </div>
+            <!-- Col end -->
+        </div>
+        <!-- End row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="claim-form">
+                    <div class="form-group">
+                      <p>Have you been involved in a vehicle accident(s) or theft whilst handling any motor vehicle in the last one year?</p>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio" id="incident-yes" value="Yes" onchange="return incidentsCheck();"> Yes
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio" id="incident-no" value="No" onchange="return incidentsCheck();"> No
+                      </label>
+                    </div>
+                    <div class="form-group" id="incident-detail" style="display: none;">
+                      <label for="">Give details of the incident</label>
+                      <textarea name="name" rows="8" cols="80" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Name of previous insurer</label>
+                      <input type="text" name="" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Name of registered owner of this vehicle</label>
+                      <input type="text" name="" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <p>Is interest of any financier to be noted on this policy?</p>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio" id="financier-yes" onchange="return financierInterest();"> Yes
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio" id="financier-no" onchange="return financierInterest();"> No
+                      </label>
+                    </div>
+                    <div class="form-group" id="financier-name" style="display: none;">
+                      <label for="">Name of financier</label>
+                      <input type="text" class="form-control" name="" value="">
+                    </div>
+                </div>
+            </div>
+              <!-- Col end -->
+        </div>
+        <!-- End row -->
+    </div>
+    <!-- End container -->
+
+</section>
+{% endblock %}
